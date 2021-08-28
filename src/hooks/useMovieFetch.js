@@ -1,28 +1,36 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-import Api from "../API";
+import API from "../API";
 
-export const useMovieFetch = () => {
-
+export const useMovieFetch = (movieId) => {
   const [state, setstate] = useState({});
-  const [oading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-
   useEffect(() => {
-
-    const fetchData = async () =>{
-      try{
-        setLoading(true)
+    const fetchMovie = async () => {
+      try {
         setError(false);
+        setLoading(true);
 
-        const movie = await Api.fetchMovie(movieId)
-
-      } catch {
+        const movie = await API.fetchMovie(movieId);
+        const credits = await API.fetchCredits(movieId);
+        //get directors
+        const directors = credits.crew.filter(
+          (member) => member.job === "director"
+        );
+        setstate({
+          ...movie,
+          actors: credits.cast,
+          directors,
+        });
+        
+      } catch (error) {
         setError(true);
       }
-    }
-
-  },[movieId])
-  return <div></div>;
+      setLoading(false);
+    };
+    fetchMovie();
+  }, [movieId]);
+  return { state, loading, error };
 };
