@@ -3,6 +3,7 @@ import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config";
 import NoImage from "../images/no_image.jpg";
 //hooks
 import { useHomeFetch } from "../hooks/useHomeFetch";
+//components
 import { HeroImage } from "./HeroImage";
 import { Grid } from "./Grid";
 import { Thumb } from "./Thumb";
@@ -11,10 +12,11 @@ import { SearchBar } from "./SearchBar";
 import { Button } from "./Button";
 
 export const Home = () => {
-  const { state, loading, error, setSearchTerm, searchTerm, setIsLoadingMore } =
-    useHomeFetch();
+  const { state, loading, error, setSearchTerm, searchTerm, setIsLoadingMore } = useHomeFetch();  
   console.log(state);
+
   if (error) return <div>Something went wrong</div>
+
   return (
     <>
       {state.results[0] ? (

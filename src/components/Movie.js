@@ -7,12 +7,13 @@ import { Grid } from "./Grid";
 import Spinner from "./Spinner";
 import { BreadCrumb } from "./BreadCrumb";
 import { MovieInfo } from "./MovieInfo";
+import { MovieInfoBar } from "./MovieInfoBar";
+import { Actor } from "./Actor";
 // Hooks
 import { useMovieFetch } from "../hooks/useMovieFetch";
 // Image
 import NoImage from "../images/no_image.jpg";
-import { MovieInfoBar } from "./MovieInfoBar";
-import { Actor } from "./Actor";
+
 
 export const Movie = () => {
   const { movieId } = useParams();
@@ -33,7 +34,7 @@ export const Movie = () => {
         budget={movie.budget}
         revenue={movie.revenue}
       />
-      <Grid header="Actors" />
+      <Grid header="Actors">
       {movie.actors.map((actor) => (
         <Actor
           key={actor.credit_id}
@@ -45,7 +46,9 @@ export const Movie = () => {
               : NoImage
           }
         />
+        
       ))}
+      </Grid>
     </>
   );
 };
