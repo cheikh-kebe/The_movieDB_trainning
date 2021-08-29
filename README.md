@@ -48,4 +48,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 # If you want to check the result thanks to the 'freeCodeCamp' tutorial i followed
 
-[link to the prod](https://tmbd-training.netlify.app)
+[link to the project](https://tmbd-training.netlify.app)
