@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Course from Thomas Weibenfalk.
+# Course from [Thomas Weibenfalk](https://github.com/weibenfalk).
 
 Learn: 
 - React
@@ -46,6 +46,6 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-# If you want to check the result thanks to the 'freeCodeCamp' tutorial i followed
+If you want to check the result thanks to the 'freeCodeCamp' tutorial i followed
 
-[link to the project](https://tmbd-training.netlify.app)
+### [Check the project](https://tmbd-training.netlify.app)
